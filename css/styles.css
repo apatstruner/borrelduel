@@ -249,7 +249,7 @@ button:hover {
     }
 }
 /* Hide leaderboard and other unnecessary elements on mobile landscape */
-@media screen and (max-width: 768px) and (orientation: landscape) {
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
     #leaderboard, #reaction-times, #winner-announcement {
         display: none;
     }
