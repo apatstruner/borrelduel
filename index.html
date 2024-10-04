@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Borrelduel</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main>
+    <div id="game-container">
+        <div id="cowboy1" class="cowboy">
+            <div class="frame">
+                <img id="cowboy1-tombstone" class="tombstone" src="assets/tombstone.gif" alt="Tombstone" style="display: none;">
+                <img id="cowboy1-img" src="assets/CowBoyIdle.gif" alt="Cowboy 1">
+            </div>
+            <p id="cowboy1-name" class="cowboy-name"></p>
+        </div>
+        <div id="duel-area">
+            <p id="countdown"></p>
+            <button id="start-button">Start Duel</button>
+            <div id="reaction-times" style="display: none;">
+                <div class="framed-section">
+                    <h2>Reaction Time</h2>
+                    <p id="reaction-time-text"></p>
+                </div>
+            </div>
+        </div>
+        <div id="cowboy2" class="cowboy">
+            <div class="frame">
+                <img id="cowboy2-tombstone" class="tombstone" src="assets/tombstone.gif" alt="Tombstone" style="display: none;">
+                <img id="cowboy2-img" src="assets/CowBoyIdle.gif" alt="Cowboy 2" class="flipped">
+            </div>
+            <p id="cowboy2-name" class="cowboy-name"></p>
+        </div>
+    </div>
+
+    <!-- Winner Announcement -->
+    <div id="winner-announcement" style="display: none;">
+        <div class="framed-section">
+            <h2 id="winner-text"></h2>
+        </div>
+    </div>
+
+    <!-- Leaderboard -->
+    <div id="leaderboard">
+        <div class="framed-section">
+            <h2>Most Wanted</h2>
+            <ol id="leaderboard-list"></ol>
+        </div>
+    </div>
+</main>
+
+<!-- Sound Effects -->
+<audio id="draw-sound" src="sounds/draw.mp3"></audio>
+<audio id="shoot-sound" src="sounds/shoot.mp3"></audio>
+<audio id="win-music" src="sounds/win.mp3"></audio>
+<audio id="suspense-sound" src="sounds/heartbeat.mp3" loop></audio>
+
+<script src="js/gamescript.js"></script>
+</body>
+</html>
