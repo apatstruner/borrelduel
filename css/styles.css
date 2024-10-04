@@ -174,8 +174,6 @@ button:hover {
     }
 
     #game-container {
-        flex-direction: column;
-        justify-content: center;
         height: auto;
         padding: 10px;
     }
@@ -219,14 +217,13 @@ button:hover {
 /* Mobile landscape adjustments */
 @media screen and (max-width: 768px) and (orientation: landscape) {
     #game-container {
-        flex-direction: row;
-        justify-content: space-between;
-        height: 100vh;
+        height: auto; /* Same as portrait */
+        padding: 10px; /* Consistent padding */
     }
 
     .cowboy {
-        width: 200px;
-        height: 300px;
+        width: 150px; /* Same as portrait */
+        height: 250px; /* Same as portrait */
     }
 
     #duel-area {
@@ -237,47 +234,54 @@ button:hover {
     }
 
     #countdown {
-        font-size: 4rem;
+        font-size: 3rem; /* Same as portrait */
     }
 
     button {
-        font-size: 1.2rem;
+        font-size: 1rem; /* Same as portrait */
     }
 
     #winner-announcement {
-        font-size: 2.5rem;
+        font-size: 2rem; /* Same as portrait */
+    }
+
+    .cowboy-name {
+        font-size: 1rem; /* Same as portrait */
     }
 }
+
 /* Hide leaderboard and other unnecessary elements on mobile landscape */
 @media only screen and (max-width: 1024px) and (orientation: landscape) {
     #leaderboard, #reaction-times, #winner-announcement {
         display: none;
     }
 
-    /* Adjust layout for landscape mode */
-    #game-container {
-        flex-direction: row;
-        justify-content: space-between;
-        height: 100vh;
-    }
-
-    .cowboy {
-        width: 200px;
-        height: 300px;
-    }
-
-    #duel-area {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-    }
-
     #countdown {
-        font-size: 4rem;
+        font-size: 2rem; /* Same as portrait */
     }
 
     button {
-        font-size: 1.2rem;
+        font-size: 1rem; /* Same as portrait */
+    }
+
+    #winner-announcement {
+        font-size: 2rem; /* Same as portrait */
+    }
+
+    .cowboy-name {
+        font-size: 1rem; /* Same as portrait */
+    }
+    #reaction-times {
+        padding: 10px;
+        font-size: 0.8rem;
+        margin-top: 40px; /* Adjusted to create space */
+        position: relative;
+        z-index: 1; /* Ensures it sits below the winner text */
+    }
+
+    #winner-announcement {
+        font-size: 2rem;
+        margin-bottom: 10px; /* Added to create space from reaction time */
+        z-index: 2; /* Ensures it sits above reaction time */
     }
 }
