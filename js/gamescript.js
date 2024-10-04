@@ -493,4 +493,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Display the leaderboard on page load
     changeBackground();
     displayLeaderboard();
+    // Function to hide the address bar on mobile
+    function hideAddressBar() {
+        window.scrollTo(0, 1);
+    }
+
+// Call this function when the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        hideAddressBar();
+    });
+
+// Additionally, when resizing or orientation change occurs
+    window.addEventListener("resize", hideAddressBar);
+    window.addEventListener("orientationchange", hideAddressBar);
+
 });

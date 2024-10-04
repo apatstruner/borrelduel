@@ -248,3 +248,36 @@ button:hover {
         font-size: 2.5rem;
     }
 }
+/* Hide leaderboard and other unnecessary elements on mobile landscape */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    #leaderboard, #reaction-times, #winner-announcement {
+        display: none;
+    }
+
+    /* Adjust layout for landscape mode */
+    #game-container {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    .cowboy {
+        width: 200px;
+        height: 300px;
+    }
+
+    #duel-area {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+    }
+
+    #countdown {
+        font-size: 4rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+}
