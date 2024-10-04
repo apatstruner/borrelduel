@@ -1,3 +1,4 @@
+/* General styles */
 body {
     margin: 0;
     font-family: 'Stardos Stencil', cursive;
@@ -31,8 +32,8 @@ main {
     border: 10px solid #8B4513; /* Wooden frame look */
     padding: 10px;
     box-shadow: 5px 5px #654321;
-    background-image: url('../assets/wooden_texture.png');  /* scale the background image */
-    background-repeat: no-repeat; /* prevent the background from repeating */
+    background-image: url('../assets/wooden_texture.png');
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -84,7 +85,7 @@ button:hover {
 
 #reaction-times {
     background-image: url('../assets/rusty.png');
-    background-size: 100% 100%; /* Make the width 100% and maintain the aspect ratio */
+    background-size: 100% 100%;
     margin-top: 20px;
     padding: 20px;
     color: #333333;
@@ -104,7 +105,7 @@ button:hover {
 }
 
 #cowboy1-img {
-    filter: hue-rotate(180deg); /* Optional color filter */
+    filter: hue-rotate(180deg);
 }
 
 .cowboy-name {
@@ -122,10 +123,6 @@ button:hover {
     border-radius: 10px;
 }
 
-.winner-glow {
-    animation: glow 1.5s infinite alternate;
-}
-
 @keyframes glow {
     from {
         box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
@@ -134,13 +131,13 @@ button:hover {
         box-shadow: 0 0 20px rgba(255, 215, 0, 1);
     }
 }
+
 #leaderboard {
     background-image: url('../assets/poster.png');
-    background-size: 100% auto; /* Make the width 100% and maintain the aspect ratio */
-    background-position: top; /* Ensure the image starts at the top */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: 100% auto;
+    background-position: top;
+    background-repeat: no-repeat;
     padding: 20px;
-    border: none; /* Remove any border */
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -149,7 +146,6 @@ button:hover {
     font-family: 'Alfa Slab One', cursive;
     text-align: center;
     font-size: 1rem;
-
 }
 
 #leaderboard h2 {
@@ -163,9 +159,92 @@ button:hover {
 #leaderboard-list li {
     margin: 5px 0;
 }
-#leaderboard ul,
-#leaderboard ol {
-    list-style: none; /* Remove bullet points and numbering */
-    padding-left: 0; /* Remove any default padding */
-    margin-left: 0; /* Remove any default margin */
+
+#leaderboard ul, #leaderboard ol {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    /* Hide leaderboard on mobile */
+    #leaderboard {
+        display: none;
+    }
+
+    #game-container {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .cowboy {
+        width: 150px;
+        height: 250px;
+    }
+
+    #duel-area {
+        top: auto;
+        left: auto;
+        transform: none;
+        position: relative;
+        min-width: 200px;
+    }
+
+    #countdown {
+        font-size: 3rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    #reaction-times {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    #winner-announcement {
+        font-size: 2rem;
+    }
+
+    .cowboy-name {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile landscape adjustments */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    #game-container {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    .cowboy {
+        width: 200px;
+        height: 300px;
+    }
+
+    #duel-area {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+    }
+
+    #countdown {
+        font-size: 4rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+
+    #winner-announcement {
+        font-size: 2.5rem;
+    }
 }

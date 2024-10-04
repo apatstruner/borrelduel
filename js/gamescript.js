@@ -142,12 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 const drawTimeoutId = setTimeout(() => {
                     suspenseSound.pause();
                     suspenseSound.currentTime = 0;
+                    drawSound.play(); // Play the 'Draw!' sound
                     countdownEl.textContent = 'SCHIET!';
                     countdownEl.style.color = 'red'; // Change text color to red
                     duelStarted = true;
                     duelStartTime = performance.now();
                     gameState = 'duel';
-                    drawSound.play(); // Play the 'Draw!' sound
                 }, remainingDelay);
                 scheduledTimeouts.push(drawTimeoutId);
             }
